@@ -4,7 +4,7 @@ Repo com o básico dos fundamentos de NextJs
 
 ## Feature
 - Aprendi como usar rotas dinâmicas e navegar entre elas
-- Exemplo abaixo como capturar rotas dinâmicas através dos colchetes exemplos de url ***/algumacoisa/search ou   /algumacoisa/alguamcoisa***
+- Exemplo abaixo como capturar rotas dinâmicas através dos colchetes exemplos de url ***/algumacoisa/search ou   /algumacoisa/algumacoisa***
 - O que esta dentro dos colchetes e dinâmico e substituído pela dado passado na URL
 
 ```javascript
