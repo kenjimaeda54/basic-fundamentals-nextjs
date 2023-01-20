@@ -1,38 +1,146 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Basico fundamentos
+Repo com o basico dos fundamentos de next js
 
-## Getting Started
 
-First, run the development server:
+## Feature
+- Aprendi como usar rotas dinamicas e navegar entre elas
+- Exemplo abaixo como capturar rotas dinamicas atraves dos colchetes exemplos  de url **/<parametro>/search ou   /<parametro>/<parametro>  **
+- O que esta dentr dos concheltes e dinamico e substitudo pela url
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```javascript
+
+//caminho 
+
+ |
+ | 
+ | [id]
+      |
+      | search
+
+import { useRouter } from "next/router"
+import Link from "next/link"
+ 
+
+export default function Search() {
+  const id = useRouter().query.id
+
+
+
+  return (
+    <div>
+      <h1>Ola search {id}</h1>
+      <Link href="/">
+        voltar
+      </Link>
+    </div>
+  )
+
+}
+
+
+//===========
+
+//caminho 
+
+ |
+ | 
+ | [id]
+      |
+      | [second]
+ 
+
+export default function second() {
+  const id = useRouter().query.id
+  const second = useRouter().query.second
+
+  return (
+    <div>
+      <h1>second {id} / {second}</h1>
+      <Link href="/">
+        voltar
+      </Link>
+    </div>
+  )
+
+}
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+##
+- Tambem pratiquei como pegar parametro por query, exemplo de url ** /search?name=Ricardo&old=20 **
 
-You can start editing the page by modifying `app/page.jsx`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```javascript
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+//===========
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+//caminho 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+ |
+ | 
+ | search
+      |
+      | index.jsx
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+import { useRouter } from "next/router"
+import Link from "next/link"
+ 
+
+export default function search() {
+  const params = useRouter().query
+
+  return (
+    <div>
+      <h1>search {params.name} / {params.old}</h1>
+      <Link href="/">
+        voltar
+      </Link>
+    </div>
+  )
+
+}
+
+
+
+```
+
+
+##
+- Abaixo exemplo de navegar entre rotas usando o Link
+
+
+
+
+``` javascript
+
+import React from "react";
+import Link from "next/link";
+
+export default function route() {
+
+  return (
+    <li>
+      <Link href="/search?name=Ricardo&old=10" >
+        <ul>Ir a rota search pega a query</ul>
+      </Link>
+      <Link href="/34343/search" >
+        <ul>Ir a rota que pega o id e busca</ul>
+      </Link>
+      <Link href="/34343/joaao" >
+        <ul>Ir a rota que pega o id e segundo parametro</ul>
+      </Link>
+    </li>
+  )
+
+}
+
+
+
+```
+
+
