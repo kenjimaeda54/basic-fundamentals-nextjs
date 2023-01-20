@@ -3,9 +3,9 @@ Repo com o básico dos fundamentos de NextJs
 
 
 ## Feature
-- Aprendi como usar rotas dinamicas e navegar entre elas
-- Exemplo abaixo como capturar rotas dinamicas atraves dos colchetes exemplos  de url ***/<parametro>/search ou   /<parametro>/<parametro>***
-- O que esta dentr dos concheltes e dinamico e substitudo pela url
+- Aprendi como usar rotas dinâmicas e navegar entre elas
+- Exemplo abaixo como capturar rotas dinâmicas através dos colchetes exemplos de url ***/algumacoisa/search ou   /algumacoisa/alguamcoisa***
+- O que esta dentro dos colchetes e dinâmico e substituído pela dado passado na URL
 
 ```javascript
 
@@ -67,10 +67,7 @@ export default function second() {
 ```
 
 ##
-- Tambem pratiquei como pegar parametro por query, exemplo de url ** /search?name=Ricardo&old=20 **
-
-
-
+- Também pratiquei como pegar parâmetro por query, exemplo de URL ***/search?name=Ricardo&old=20***
 
 ```javascript
 
