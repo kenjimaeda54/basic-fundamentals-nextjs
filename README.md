@@ -1,5 +1,5 @@
 ## Basico fundamentos
-Repo com o basico dos fundamentos de next js
+Repo com o básico dos fundamentos de NextJs
 
 
 ## Feature
